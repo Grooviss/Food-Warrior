@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     }
     void spawn()
     {
-        Vector3 pos = new Vector3(Random.Range(-5, 5), 0, 0);
+        Vector3 pos = new Vector3(Random.Range(-5, 5), -3, 0);
         Instantiate(fruit, pos, Quaternion.identity);
     }
 
