@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class fruit : MonoBehaviour
 {
+    public GameObject explodeparticles;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -16,10 +17,19 @@ public class fruit : MonoBehaviour
     {
         if(transform.position.y < -6)
         {
-            Destroy(gameObject);
-            print(":D");
+            miss();
         }
     }
-
+    void miss()
+    {
+        Destroy(gameObject);
+        print(":D");
+    }
+    public void slice()
+    {
+        var particles = Instantiate(explodeparticles);
+        particles.transform.position = transform.position;
+        Destroy(gameObject);
+    }
 
 }
